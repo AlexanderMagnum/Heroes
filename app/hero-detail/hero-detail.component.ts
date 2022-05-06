@@ -35,4 +35,12 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
+  //Guarda los cambios y regresa a la vista anterior.
+  save(): void {
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
+  }
+
 }
